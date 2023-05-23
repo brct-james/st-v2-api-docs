@@ -352,11 +352,7 @@
             "description": "OK"
           }
         },
-        "security": [
-          {
-            "AgentToken": []
-          }
-        ],
+        "security": [],
         "summary": "List Systems",
         "tags": [
           "systems"
@@ -406,11 +402,7 @@
             "description": "OK"
           }
         },
-        "security": [
-          {
-            "AgentToken": []
-          }
-        ],
+        "security": [],
         "summary": "Get All Systems",
         "tags": [
           "systems"
@@ -418,54 +410,6 @@
         "parameters": []
       },
       "parameters": []
-    },
-    "/systems/{systemSymbol}": {
-      "get": {
-        "description": "Get the details of a system.",
-        "operationId": "get-system",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "",
-                  "properties": {
-                    "data": {
-                      "$ref": "../models/System.json"
-                    }
-                  },
-                  "required": [
-                    "data"
-                  ],
-                  "type": "object"
-                }
-              }
-            },
-            "description": "OK"
-          }
-        },
-        "security": [
-          {
-            "AgentToken": []
-          }
-        ],
-        "summary": "Get System",
-        "tags": [
-          "systems"
-        ]
-      },
-      "parameters": [
-        {
-          "description": "The system symbol",
-          "in": "path",
-          "name": "systemSymbol",
-          "required": true,
-          "schema": {
-            "default": "X1-OE",
-            "type": "string"
-          }
-        }
-      ]
     },
     "/systems/{systemSymbol}/waypoints": {
       "get": {
@@ -499,11 +443,7 @@
             "description": "OK"
           }
         },
-        "security": [
-          {
-            "AgentToken": []
-          }
-        ],
+        "security": [],
         "summary": "List Waypoints",
         "tags": [
           "systems"
@@ -542,6 +482,50 @@
         }
       ]
     },
+    "/systems/{systemSymbol}": {
+      "get": {
+        "description": "Get the details of a system.",
+        "operationId": "get-system",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "properties": {
+                    "data": {
+                      "$ref": "../models/System.json"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Get System",
+        "tags": [
+          "systems"
+        ],
+        "security": []
+      },
+      "parameters": [
+        {
+          "description": "The system symbol",
+          "in": "path",
+          "name": "systemSymbol",
+          "required": true,
+          "schema": {
+            "default": "X1-OE",
+            "type": "string"
+          }
+        }
+      ]
+    },
     "/systems/{systemSymbol}/waypoints/{waypointSymbol}": {
       "get": {
         "description": "View the details of a waypoint.",
@@ -567,11 +551,7 @@
             "description": "OK"
           }
         },
-        "security": [
-          {
-            "AgentToken": []
-          }
-        ],
+        "security": [],
         "summary": "Get Waypoint",
         "tags": [
           "systems"
@@ -622,11 +602,7 @@
             "description": "OK"
           }
         },
-        "security": [
-          {
-            "AgentToken": []
-          }
-        ],
+        "security": [],
         "summary": "Get Market",
         "tags": [
           "systems"
@@ -678,11 +654,7 @@
             "description": "OK"
           }
         },
-        "security": [
-          {
-            "AgentToken": []
-          }
-        ],
+        "security": [],
         "summary": "Get Shipyard",
         "tags": [
           "systems"
@@ -734,11 +706,7 @@
             "description": "OK"
           }
         },
-        "security": [
-          {
-            "AgentToken": []
-          }
-        ],
+        "security": [],
         "summary": "Get Jump Gate",
         "tags": [
           "systems"
@@ -820,7 +788,8 @@
             "name": "limit",
             "description": "How many entries to return per page"
           }
-        ]
+        ],
+        "security": []
       }
     },
     "/factions/{factionSymbol}": {
@@ -850,7 +819,8 @@
         "summary": "Get Faction",
         "tags": [
           "factions"
-        ]
+        ],
+        "security": []
       },
       "parameters": [
         {
